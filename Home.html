@@ -1,0 +1,1106 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>The Vintage</title>
+  <link rel="icon" href="C:\Users\HP\OneDrive\Desktop\Restaurant\img\logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+
+  <style>
+	@import url("https://fonts.googleapis.com/css?family=Cabin|Herr+Von+Muellerhoff|Source+Sans+Pro:400,900&display=swap");
+/*Global styles*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-font: "Source Sans Pro", sans-serif;
+  --secondary-font: "Herr Von Muellerhoff", cursive;
+  --body-font: "Cabin", sans-serif;
+  --main-font-color-dark: #00000042;
+  --secondary-font-color: #a18861;
+  --body-font-color: #515151;
+}
+
+html {
+  font-family: var(--body-font);
+  font-size: 10px;
+  color: var(--body-font-color);
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+.logo{
+border-radius: 50%;
+}
+section {
+  padding: 3.9rem 0;
+  overflow: hidden;
+}
+img {
+  width: 100%;
+  max-width: 100%;
+}
+a {
+  text-decoration: none;
+}
+p {
+  font-size: 1.6rem;
+}
+.container {
+  width: 100%;
+  max-width: 122.5rem;
+  margin: 0 auto;
+  padding: 0 2.4rem;
+}
+
+/*Header style */
+
+header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+}
+
+.fas.fa-times {
+  display: none;
+}
+nav {
+  height: 7.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-toggle {
+  color: white;
+  font-size: 2.2rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 2.5rem;
+  cursor: pointer;
+  z-index: 1500;
+}
+
+.nav-list {
+  list-style: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 100vh;
+  background-color: var(--main-font-color-dark);
+  padding: 4.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  z-index: 1250;
+  transform: translateX(-100%);
+  transition: 0.5s;
+}
+
+.nav::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.5s;
+}
+
+.open .fa-times {
+  display: block;
+}
+
+.open .fa-bars {
+  display: none;
+}
+
+.open .nav-list {
+  transform: translateX(0);
+}
+.open .nav::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.nav-items {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+.nav-link {
+  display: block;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  margin-right: -2px;
+}
+
+.nav-link:hover {
+  color: var(--secondary-font-color);
+}
+/*Hero ends here*/
+.hero {
+  width: 100%;
+  height: 100vh;
+  background-image:url("C:/Users/HP/OneDrive/Desktop/Restaurant/img/img15.jpg") ;
+  background-size: cover;
+  display: flex;
+  image-rendering: -webkit-optimize-contrast;
+  align-items: center;
+  text-align: center;
+}
+
+.sub-headline {
+  font-size: 8.5rem;
+  font-family: var(--secondary-font);
+  color: var(--secondary-font-color);
+  font-weight: 100;
+  line-height: 0.4;
+  letter-spacing: 2px;
+  opacity: 0;
+  animation: fadeUp 0.5s forwards;
+  animation-delay: 0.5s;
+}
+
+.first-letter {
+  text-transform: uppercase;
+  font-size: 10.3rem;
+}
+
+.headline {
+  color: white;
+  font-size: 3.7rem;
+  font-family: var(--main-font);
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 0.5rem;
+  margin-right: -0.5rem;
+  animation: scale 0.5s forwards;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.line {
+  width: 100%;
+  max-width: 8.4rem;
+  height: 0.25rem;
+  background-color: #fff;
+  position: relative;
+  animation: grow 2s forwards;
+  animation-delay: 0.9s;
+  opacity: 0;
+}
+.line-right::before,
+.line-left::before {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0.6rem solid transparent;
+  animation: grow 0.5s forwards;
+  animation-delay: 1.2s;
+  opacity: 0;
+}
+
+.line-left::before {
+  border-left-color: rgb(255, 255, 255);
+  right: 0;
+}
+.line-right::before {
+  border-right-color: rgb(255, 255, 255);
+  right: 0;
+}
+.asterisk {
+  font-size: 1.2rem;
+  color: var(--secondary-font-color);
+  margin: 0 1.6rem;
+  opacity: 0;
+  animation: spin 0.5s forwards;
+  animation-delay: 0.7s;
+}
+
+.single-animation {
+  opacity: 0;
+  animation: fadeDown 0.5s forwards;
+  animation-delay: 1.5s;
+}
+
+.headline-description h5 {
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 100;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  letter-spacing: 3px;
+  margin-right: -3px;
+}
+.btn {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-right: -2px;
+}
+
+.cta-btn {
+  font-size: 1.1rem;
+  background-color: white;
+  padding: 0.9rem 1.8rem;
+  color: var(--body-font-color);
+  border-radius: 0.4rem;
+}
+
+.cta-btn:hover,
+.cta-btn:focus {
+  color: white;
+  background-color: var(--secondary-font-color);
+}
+
+/*Discover our story section */
+.global-headline {
+  text-align: center;
+  margin-top: 3.9rem;
+}
+
+.discover-our-story .global-headline {
+  margin-top: 6.9rem;
+}
+
+.global-headline .asterisk {
+  color: var(--body-font-color);
+  margin: 2.4rem 0;
+}
+
+.headline-dark {
+  color: var(--main-font-color-dark);
+}
+
+.global-headline .sub-headline {
+  letter-spacing: -0.1px;
+  line-height: 0.42;
+}
+
+.restaurant-info {
+  text-align: center;
+}
+
+.restaurant-description {
+  line-height: 1.6;
+  margin-bottom: 2.4rem;
+}
+
+.body-btn {
+  font-size: 1.5rem;
+  color: var(--secondary-font-color);
+  position: relative;
+}
+.body-btn::before {
+  content: "";
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  top: 0;
+  bottom: -3px;
+  background-color: var(--secondary-font-color);
+}
+
+.body-btn:hover,
+.body-btn:focus {
+  color: var(--main-font-color-dark);
+}
+.body-btn:hover::before,
+.body-btn:focus::before {
+  background-color: var(--main-font-color-dark);
+}
+
+/*Tasteful recipes */
+
+.tasteful-recipes {
+  background: url("https://github.com/Afarah92/the-rosa-restuarant/blob/master/the%20rosa%20wesite/img/tasteful-recipes.jpg?raw=true");
+  background-size: cover;
+}
+.between {
+  min-height: 65vh;
+  display: flex;
+  align-items: center;
+}
+
+/*Discover Our Menu*/
+
+.image-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1.5rem;
+}
+
+.discover-our-menu .restaurant-description {
+  padding-top: 3rem;
+  margin-bottom: 0;
+}
+
+/*The perfect blend */
+
+.perfect-blend {
+  background: url("https://github.com/Afarah92/the-rosa-restuarant/blob/master/the%20rosa%20wesite/img/perfect-blend.jpg?raw=true")
+    center no-repeat;
+
+  background-size: cover;
+}
+
+/*footer */
+footer {
+  padding: 7.9rem;
+  background-color: #121212;
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+
+.back-to-top {
+  width: 7rem;
+  height: 7rem;
+  background-color: #121212;
+  position: absolute;
+  top: -3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+}
+
+.back-to-top i {
+  display: block;
+  color: white;
+  font-size: 2rem;
+  padding: 2rem;
+  animation: Up 2s infinite;
+}
+.footer-content {
+  overflow: hidden;
+}
+.footer-content h4 {
+  font-size: 1.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  font-weight: 100;
+  margin-right: -0.5rem;
+}
+
+.footer-content .asterisk {
+  margin: 2.4rem 0;
+}
+.footer-content-about {
+  margin-bottom: 5.4rem;
+}
+.footer-content-about p {
+  line-height: 2;
+}
+.social-icons {
+  list-style: none;
+  margin-bottom: 5.4rem;
+  display: flex;
+  justify-content: center;
+}
+.social-icons i {
+  font-size: 2rem;
+  color: white;
+  padding: 2.8rem 2rem;
+  opacity: 0.5;
+}
+.social-icons i:hover,
+.social-icons i:focus {
+  color: var(--secondary-font-color);
+}
+
+.newsletter-form {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.newsletter-input {
+  width: 100%;
+  max-width: 25rem;
+  padding: 1rem;
+  border-radius: 0.4rem;
+}
+.newsletter-btn {
+  background-color: transparent;
+  border: none;
+  color: var(--main-font-color-dark);
+  cursor: pointer;
+  font-size: 1.6rem;
+  padding: 1px 0.6rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 10.5rem;
+}
+/*media queries  */
+
+@media screen and (min-width: 900px) {
+  section {
+    padding: 7.9rem;
+  }
+  .fas.fa-times,
+  .fa-times {
+    display: none;
+  }
+  .nav::before {
+    display: none;
+  }
+  .nav {
+    justify-content: space-between;
+  }
+
+  .nav-list {
+    position: initial;
+    width: initial;
+    height: initial;
+    background-color: transparent;
+    padding: 0;
+    justify-content: initial;
+    flex-direction: row;
+    transform: initial;
+    transition: initial;
+  }
+
+  .nav-item {
+    margin: 0 2.4rem;
+    border: none;
+  }
+  .nav-item:last-child {
+    margin: 0;
+  }
+  .nav-link {
+    font-size: 1.3rem;
+  }
+  .active {
+    position: relative;
+  }
+  .active::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    left: 0;
+    bottom: -3px;
+  }
+  .sub-headline {
+    font-size: 10rem;
+  }
+  .first-letter {
+    font-size: 12.2rem;
+  }
+  .headline {
+    font-size: 4.7rem;
+    letter-spacing: 0.8rem;
+  }
+  .line {
+    max-width: 11.4rem;
+  }
+
+  .restaurant-info {
+    display: flex;
+    align-items: center;
+  }
+
+  .restaurant-info > div {
+    flex: 1;
+  }
+
+  .padding-right {
+    padding-right: 7rem;
+  }
+
+  .footer-content {
+    max-width: 77.4rem;
+    margin: auto;
+  }
+
+  .footer-content-about {
+    max-width: 51.4rem;
+    margin: 0 auto 5.4rem;
+  }
+  .footer-content-divider {
+    display: flex;
+    justify-content: space-between;
+  }
+  .social-media,
+  .newsletter-form {
+    width: 100%;
+    max-width: 27.3rem;
+    margin: 0 1rem;
+  }
+  .social-icons i {
+    opacity: 1;
+  }
+  .newsletter-btn {
+    margin-left: 7.5rem;
+  }
+}
+
+/*Animmationss*/
+
+@keyframes fadeUp {
+  0% {
+    transform: translateY(4rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes grow {
+  0% {
+    width: 0;
+  }
+  100% {
+    opacity: 1;
+    width: 100%;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes fadeDown {
+  0% {
+    transform: translateY(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes Up {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+}
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+* {
+  box-sizing: border-box;
+}
+
+
+.testimonial-container {
+  background-color: #527381;
+  color: #fff;
+  border-radius: 15px;
+  margin: 30px auto;
+  padding: 30px 40px;
+  max-width: 768px;
+  position: relative;
+}
+
+.fa-quote {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 28px;
+  position: absolute;
+  top: 70px;
+}
+
+.fa-quote-right {
+  left: 40px;
+}
+
+.fa-quote-left {
+  right: 40px;
+}
+
+
+.testimonial {
+  line-height: 22px;
+  text-align: justify;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user .user-image {
+  border-radius: 50%;
+  height: 75px;
+  width: 75px;
+  object-fit: cover;
+}
+
+.user .user-details {
+  margin-left: 10px;
+}
+
+.user .username {
+  margin: 0;
+}
+
+.user .role {
+  font-weight: normal;
+  margin: 10px 0;
+}
+
+.progress-bar {
+  background-color: #fff;
+  height: 2px;
+  width: 100%;
+  animation: grow 10s linear infinite;
+  transform-origin: left;
+}
+
+@keyframes grow {
+  0% {
+    transform: scaleX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonial-container {
+    padding: 20px 30px;
+  }
+
+  .fa-quote {
+    display: none;
+  }
+}
+
+</style>
+
+
+<script>
+//section element funncion
+const SelectElement = function (element) {
+  return document.querySelector(element);
+};
+
+let menuToggler = SelectElement(".menu-toggle");
+let body = SelectElement("body");
+
+menuToggler.addEventListener("click", function () {
+  body.classList.toggle("open");
+});
+
+//scroll reveal
+window.sr = ScrollReveal();
+sr.reveal(".animate-left", {
+  origin: "left",
+  duration: 1000,
+  distance: "25rem",
+  delay: 600
+});
+
+sr.reveal(".animate-right", {
+  origin: "right",
+  duration: 1000,
+  distance: "25rem",
+  delay: 300
+});
+
+sr.reveal(".animate-top", {
+  origin: "top",
+  duration: 1000,
+  distance: "25rem",
+  delay: 300
+});
+
+sr.reveal(".animate-bottom", {
+  origin: "bottom",
+  duration: 1000,
+  distance: "25rem",
+  delay: 300
+});
+
+const testemonialsContainer = document.querySelector(".testimonials-container");
+const testemonial = document.querySelector(".testimonial");
+const userImage = document.querySelector(".user-image");
+const userName = document.querySelector(".username");
+const role = document.querySelector(".role");
+
+const testimonials = [
+  {
+    name: "Miyah Myles",
+    position: "Marketing",
+    photo:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=707b9c33066bf8808c934c8ab394dff6",
+    text:
+      "I've worked with literally hundreds of HTML/CSS developers and I have to say the top spot goes to this guy. This guy is an amazing developer. He stresses on good, clean code and pays heed to the details. I love developers who respect each and every aspect of a throughly thought out design and do their best to put it in code. He goes over and beyond and transforms ART into PIXELS - without a glitch, every time."
+  },
+  {
+    name: "June Cha",
+    position: "Software Engineer",
+    photo: "https://randomuser.me/api/portraits/women/44.jpg",
+    text:
+      "This guy is an amazing frontend developer that delivered the task exactly how we need it, do your self a favor and hire him, you will not be disappointed by the work delivered. He will go the extra mile to make sure that you are happy with your project. I will surely work again with him!"
+  },
+  {
+    name: "Iida Niskanen",
+    position: "Data Entry",
+    photo: "https://randomuser.me/api/portraits/women/68.jpg",
+    text:
+      "This guy is a hard worker. Communication was also very good with him and he was very responsive all the time, something not easy to find in many freelancers. We'll definitely repeat with him."
+  },
+  {
+    name: "Renee Sims",
+    position: "Receptionist",
+    photo: "https://randomuser.me/api/portraits/women/65.jpg",
+    text:
+      "This guy does everything he can to get the job done and done right. This is the second time I've hired him, and I'll hire him again in the future."
+  },
+  {
+    name: "Jonathan Nunfiez",
+    position: "Graphic Designer",
+    photo: "https://randomuser.me/api/portraits/men/43.jpg",
+    text:
+      "I had my concerns that due to a tight deadline this project can't be done. But this guy proved me wrong not only he delivered an outstanding work but he managed to deliver 1 day prior to the deadline. And when I asked for some revisions he made them in MINUTES. I'm looking forward to work with him again and I totally recommend him. Thanks again!"
+  },
+  {
+    name: "Sasha Ho",
+    position: "Accountant",
+    photo:
+      "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?h=350&auto=compress&cs=tinysrgb",
+    text:
+      "This guy is a top notch designer and front end developer. He communicates well, works fast and produces quality work. We have been lucky to work with him!"
+  },
+  {
+    name: "Veeti Seppanen",
+    position: "Director",
+    photo: "https://randomuser.me/api/portraits/men/97.jpg",
+    text:
+      "This guy is a young and talented IT professional, proactive and responsible, with a strong work ethic. He is very strong in PSD2HTML conversions and HTML/CSS technology. He is a quick learner, eager to learn new technologies. He is focused and has the good dynamics to achieve due dates and outstanding results."
+  }
+];
+
+let idx = 1;
+
+function updateTestimonial() {
+  const { name, position, photo, text } = testimonials[idx];
+
+  testemonial.innerHTML = text;
+  userImage.src = photo;
+  userName.innerHTML = name;
+  role.innerHTML = position;
+
+  idx++;
+
+  if (idx > testimonials.length - 1) {
+    idx = 0;
+  }
+}
+
+setInterval(updateTestimonial, 9200);
+
+</script>
+
+</head>
+
+<body class="open">
+  <header>
+    <div class="container">
+
+      <nav class="nav">
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+          <i class="fas fa-times"></i>
+        </div>
+        <a href="/img/logo.png" class="logo">
+          <img src="C:/Users/HP/OneDrive/Desktop/Restaurant/img/logo.png" alt="" width="60px" height="60px" align="left" border-radius="50%" opaque="50%"></a>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="home.html" class="nav-link active">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#menu" class="nav-link">Menu</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#reservations" class="nav-link">Reservations</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#about" class="nav-link">About</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!--Header ends here-->
+
+  <section class="hero" id="hero">
+
+    <div class="container">
+
+      <h2 class="sub-headline">
+
+        <span class="first-letter">W</span>elcome
+      </h2>
+      <h1 class="headline">Vintage Restro </h1>
+      <div class="headline-description">
+        <div class="separator">
+          <div class="line line-left"></div>
+          <div class="asterisk"> <i class="fas fa-asterisk"></i></div>
+          <div class="line line-right"></div>
+        </div>
+        <div class="single-animation">
+
+          <h5>Open from 10 am to 10 pm</h5>
+
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!--Hero  ends here-->
+  <section class="disccover-our-story" id="about">
+    <div class="container">
+      <div class="restaurant-info">
+        <div class="restaurant-descripton padding-right animate-left">
+
+          <div class="global-headline">
+            <h2 class="sub-headline">
+
+              <span class="first-letter">D</span>iscover
+            </h2>
+            <h1 class="headline headline-dark">About Us</h1>
+            <div class="asterisk"> <i class="fas fa-asterisk"></i></div>
+
+          </div>
+          <p>Vintage is Restro and bar in Bhubaneshwar. It is a walk through the brick on the walls with few retro fitted switches and lights creates a beautiful space of the vintage days. 
+		Its ambience and environment are very delightful and moments can be ceased.</p>
+         </div>
+        <div class="restaurant-info-img animate-right ">
+          <img src="https://github.com/Afarah92/the-rosa-restuarant/blob/master/the%20rosa%20wesite/img/our-story-1.jpg?raw=true" alt="">
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+  <!--Discover our story ends here-->
+  <section class="tasteful-recipes between">
+    <div class="container">
+
+      <div class="global-headline">
+        <div class="animate-top">
+          <h2 class="sub-headline">
+
+            <span class="first-letter">T</span>asteful
+          </h2>
+
+        </div>
+        <div class="animate-bottom">
+          <h1 class="headline ">Recipes</h1>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+  <!--Tasteful recipes ends here-->
+
+  <section class="discover-our-menu" id="menu">
+    <div class="container">
+      <div class="restaurant-info">
+        <div class="image-group padding-right animate-left">
+
+          <img src="C:/Users/HP/OneDrive/Desktop/Restaurant/img/thai7.jpg?raw=true" alt="">
+          <img src="C:/Users/HP/OneDrive/Desktop/Restaurant/img/chi5.jpg?raw=true" alt="">
+          <img src="C:/Users/HP/OneDrive/Desktop/Restaurant/img/ni3.jpg?raw=true" alt="">
+          <img src="C:/Users/HP/OneDrive/Desktop/Restaurant/img/ff2.jpg?raw=true" alt="">
+        </div>
+        <div class="restaurant-description animate-right">
+          <div class="global-headline">
+            <h2 class="sub-headline">
+
+              <span class="first-letter">D</span>iscover
+            </h2>
+            <h1 class="headline headline-dark">Menu</h1>
+            <div class="asterisk"> <i class="fas fa-asterisk"></i></div>
+
+          </div>
+
+          <p>Our cuisines range from Thai, Chinese, North Indian to Fast Food and Beverages. </p>
+          <a href="Menu.pdf" class="btn body-btn">View the full Menu</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+  <!--Discover our menu ends here-->
+
+  <section class="perfect-blend between">
+    <div class="container">
+
+      <div class="global-headline">
+        <div class="animate-top">
+          <h2 class="sub-headline">
+
+            <span class="first-letter">T</span>he Perfect
+          </h2>
+
+        </div>
+        <div class="animate-bottom">
+          <h1 class="headline ">Blend</h1>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+  <!--The perfect blend ends here-->
+
+  <section class="culinary-delight" id="reservations">
+    <div class="container">
+      <div class="restaurant-info">
+        <div class="restaurant-descripton padding-right animate-left">
+
+          <div class="global-headline">
+            <h2 class="sub-headline">
+
+              <span class="first-letter">S</span>ervices
+            </h2>
+            
+            <div class="asterisk"> <i class="fas fa-asterisk"></i></div>
+
+          </div>
+          <p>Looking to host Birthdays, Anniversaries or Business Dinners?</p>
+          <a href="#contact" class="btn body-btn">Make a reservation</a>
+
+        </div>
+        <div class="image-group">
+          <img class="animate-top" src="https://github.com/Afarah92/the-rosa-restuarant/blob/master/the%20rosa%20wesite/img/delight-group-1.jpg?raw=true" alt="">
+          <img class="animate-bottom" src="https://github.com/Afarah92/the-rosa-restuarant/blob/master/the%20rosa%20wesite/img/delight-group-2.jpg?raw=true" alt="">
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+<!--Testimonials>
+<section class="testimonials">
+<div class="testimonial-container">
+  <div class="progress-bar"></div>
+  <div class="fas fa-quote-right fa-quote"></div>
+  <div class="fas fa-quote-left fa-quote"></div>
+  <p class="testimonial">
+    I've worked with literally hundreds of HTML/CSS developers and I have to
+    say the top spot goes to this guy. This guy is an amazing developer. He
+    stresses on good, clean code and pays heed to the details. I love
+    developers who respect each and every aspect of a throughly thought out
+    design and do their best to put it in code. He goes over and beyond and
+    transforms ART into PIXELS - without a glitch, every time.
+  </p>
+  <div class="user">
+    <img src="https://randomuser.me/api/portraits/women/40.jpg" alt="user" class="user-image" />
+    <div class="user-details">
+      <h4 class="username">Miyah Myles</h4>
+      <p class="role">Marketing</p>
+    </div>
+  </div>
+</div>
+</section>
+
+  <!--Culinary Delight ends here-->
+  <footer>
+<section class="contact-us" id="contact">
+    <div class="container">
+      <div class="back-to-top">
+        <a href="#hero"> <i class="fas fa-chevron-up"></i> </a>
+      </div>
+      <div class="footer-content">
+        <div class="footer-content-about animate-top">
+          <div class="content-divider  animate-bottom">
+          <div class="form">
+            <h4>Contact Us</h4>
+		<p align="left">Find us at <strong>Krishna Palza, 3rd Floor</strong> in Bhubaneshwar or call us at <strong>+91-8596901234</strong></p>
+    <p align="left"><span class="w3-tag">FYI!</span> We offer full-service catering for any event, large or small. We understand your needs and we will cater the food to satisfy the biggerst criteria of them all, both look and taste.</p>
+    <p align="left" class="w3-large">Reserve a table, ask for today's special or just send us a message:</p>
+            <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="How many people" required name="People"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required name="date" value="2020-11-16T20:00"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
+      <p><button class="w3-button w3-light-grey w3-block" type="submit">SEND MESSAGE</button></p>
+    </form>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="/Users/amalfarah/Desktop/the rosa wesite/js/main.js"></script>
+</body>
+
+</html>
